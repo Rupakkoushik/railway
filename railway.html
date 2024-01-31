@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway Ticket Reservation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="reservationForm">
+    <label for="trainName">Train Name:</label>
+    <input type="text" id="trainName" required><br>
+    <label for="from">From:</label>
+    <input type="text" id="from" required><br>
+    <label for="to">To:</label>
+    <input type="text" id="to" required><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" required><br>
+    <label for="passenger1">Passenger 1 Name:</label>
+    <input type="text" id="passenger1" required><br>
+    <label for="passenger2">Passenger 2 Name:</label>
+    <input type="text" id="passenger2" required><br>
+    <label for="passenger3">Passenger 3 Name:</label>
+    <input type="text" id="passenger3" required><br>
+    <label for="passenger4">Passenger 4 Name:</label>
+    <input type="text" id="passenger4" required><br>
+    <label for="passenger5">Passenger 5 Name:</label>
+    <input type="text" id="passenger5" required><br>
+    <input type="submit" value="Reserve Ticket">
+</form>
+
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var trainName = document.getElementById("trainName").value;
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        var date = document.getElementById("date").value;
+        var passengers = [
+            document.getElementById("passenger1").value,
+            document.getElementById("passenger2").value,
+            document.getElementById("passenger3").value,
+            document.getElementById("passenger4").value,
+            document.getElementById("passenger5").value
+        ];
+
+        // Here you can implement further logic, like sending the reservation details to a server or displaying a confirmation message.
+        console.log("Train Name: " + trainName);
+        console.log("From: " + from);
+        console.log("To: " + to);
+        console.log("Date: " + date);
+        console.log("Passengers: " + passengers.join(", "));
+    });
+</script>
+</body>
+</html>
